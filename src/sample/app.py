@@ -8,7 +8,9 @@ class Food:
         return r.json()['meals']
 
     def getById(self, id):
-        r = requests.get('https://www.themealdb.com/api/json/v1/1/lookup.php?', {'i': id})
+        if type(id) != int:
+            raise Exception('Id must be an integer!')
+        r = requests.get('https://www.themealdb.com/api/json/v1/1/lookup.php?', {'i': str(id)})
         return r.json()['meals']
 
     def listByLetter(self, letter):

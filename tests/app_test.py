@@ -9,7 +9,7 @@ class test_for_app(unittest.TestCase):
         self.assertEqual(self.tmp.getByName('Arrabiata')[0]['strMeal'], 'Spicy Arrabiata Penne')
 
     def test_getById(self):
-        self.assertEqual(self.tmp.getById('52772')[0]['strCategory'], "Chicken")
+        self.assertEqual(self.tmp.getById(52772)[0]['strCategory'], "Chicken")
 
     def test_listByLetter(self):
         self.assertEqual(len(self.tmp.listByLetter('a')), 2)
@@ -18,7 +18,7 @@ class test_for_app(unittest.TestCase):
         self.assertEqual(self.tmp.getByName('Dziuzeppe'), None)
 
     def test_getByIdNotFound(self):
-        self.assertEqual(self.tmp.getById('22222222'), None)
+        self.assertEqual(self.tmp.getById(22222222), None)
 
     def test_listByLetterNotFound(self):
         self.assertEqual(self.tmp.listByLetter('z'), None)
