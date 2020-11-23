@@ -20,5 +20,8 @@ class test_for_app(unittest.TestCase):
     def test_getByIdNotFound(self):
         self.assertEqual(self.tmp.getById('22222222'), None)
 
+    def test_listByLetterNotFound(self):
+        self.assertEqual(self.tmp.listByLetter('z'), None)
+
     def tearDown(self):
         self.tmp = None

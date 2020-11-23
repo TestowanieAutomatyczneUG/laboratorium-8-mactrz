@@ -16,4 +16,4 @@ class Food:
 food = Food()
 
 print(food.getByName('Arrabiata'))
-print(food.getById('52772'))
+print(food.listByLetter('z'))
