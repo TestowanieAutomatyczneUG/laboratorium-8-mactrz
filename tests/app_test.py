@@ -27,5 +27,9 @@ class test_for_app(unittest.TestCase):
         with self.assertRaises(Exception):
             self.tmp.getByName(123)
 
+    def test_getByIdException(self):
+        with self.assertRaises(Exception):
+            self.tmp.getById(True)
+
     def tearDown(self):
         self.tmp = None
