@@ -23,5 +23,9 @@ class test_for_app(unittest.TestCase):
     def test_listByLetterNotFound(self):
         self.assertEqual(self.tmp.listByLetter('z'), None)
 
+    def test_getByNameException(self):
+        with self.assertRaises(Exception):
+            self.tmp.getByName(123)
+
     def tearDown(self):
         self.tmp = None
