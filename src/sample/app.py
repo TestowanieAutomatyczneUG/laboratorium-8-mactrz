@@ -2,6 +2,8 @@ import requests
 
 class Food:
     def getByName(self, name):
+        if type(name) != str:
+            raise Exception('Name must be a string!')
         r = requests.get('https://www.themealdb.com/api/json/v1/1/search.php?', {'s': name})
         return r.json()['meals']
 
