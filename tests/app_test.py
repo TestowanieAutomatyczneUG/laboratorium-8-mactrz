@@ -6,13 +6,16 @@ class test_for_app(unittest.TestCase):
         self.tmp = Food()
 
     def test_getByName(self):
-        self.assertEqual(self.tmp.getByName('Arrabiata')['strMeal'], 'Spicy Arrabiata Penne')
+        self.assertEqual(self.tmp.getByName('Arrabiata')[0]['strMeal'], 'Spicy Arrabiata Penne')
 
     def test_getById(self):
-        self.assertEqual(self.tmp.getById('52772')['strCategory'], "Chicken")
+        self.assertEqual(self.tmp.getById('52772')[0]['strCategory'], "Chicken")
 
     def test_listByLetter(self):
         self.assertEqual(len(self.tmp.listByLetter('a')), 2)
+
+    def test_getByNameNotFound(self):
+        self.assertEqual(self.tmp.getByName('Dziuzeppe'), None)
 
     def tearDown(self):
         self.tmp = None
