@@ -3,8 +3,9 @@ import requests
 class Food:
     def getByName(self, name):
         r = requests.get('https://www.themealdb.com/api/json/v1/1/search.php?', {'s': name})
-        print(r.json())
+        return r.json()['meals']
 
 
 food = Food()
-food.getByName('Arrabiata')
+
+print(food.getByName('Arrabiata'))

@@ -6,7 +6,7 @@ class test_for_app(unittest.TestCase):
         self.tmp = Food()
 
     def test_getByName(self):
-        self.assertEqual(self.tmp.getByName('Arrabiata').strMeal, 'Spicy Arrabiata Penne')
+        self.assertEqual(self.tmp.getByName('Arrabiata')[0]['strMeal'], 'Spicy Arrabiata Penne')
 
     def tearDown(self):
         self.tmp = None
