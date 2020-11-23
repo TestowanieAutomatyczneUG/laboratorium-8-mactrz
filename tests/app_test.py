@@ -41,3 +41,6 @@ class test_for_app(unittest.TestCase):
 
     def tearDown(self):
         self.tmp = None
+
+if __name__ == '__main__':
+    unittest.main()
