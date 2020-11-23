@@ -35,5 +35,9 @@ class test_for_app(unittest.TestCase):
         with self.assertRaises(Exception):
             self.tmp.listByLetter(True)
 
+    def test_listByLetterMore(self):
+        with self.assertRaises(Exception):
+            self.tmp.listByLetter('asd')
+
     def tearDown(self):
         self.tmp = None
