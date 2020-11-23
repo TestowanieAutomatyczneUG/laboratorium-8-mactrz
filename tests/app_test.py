@@ -11,5 +11,8 @@ class test_for_app(unittest.TestCase):
     def test_getById(self):
         self.assertEqual(self.tmp.getById('52772')['strCategory'], "Chicken")
 
+    def test_listByLetter(self):
+        self.assertEqual(len(self.tmp.listByLetter('a')), 2)
+
     def tearDown(self):
         self.tmp = None
