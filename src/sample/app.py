@@ -14,10 +14,7 @@ class Food:
         return r.json()['meals']
 
     def listByLetter(self, letter):
+        if type(letter) != str:
+            raise Exception('Must be a single letter!')
         r = requests.get('https://www.themealdb.com/api/json/v1/1/search.php?', {'f': letter})
         return r.json()['meals']
-
-food = Food()
-
-print(food.getByName('Arrabiata'))
-print(food.listByLetter('z'))
