@@ -17,5 +17,8 @@ class test_for_app(unittest.TestCase):
     def test_getByNameNotFound(self):
         self.assertEqual(self.tmp.getByName('Dziuzeppe'), None)
 
+    def test_getByIdNotFound(self):
+        self.assertEqual(self.tmp.getById('22222222'), None)
+
     def tearDown(self):
         self.tmp = None
